@@ -16,7 +16,21 @@ async function create(req,res) {
   }
 }
 
+async function index(req,res) {
+  try {
+    const flights = await Flight.find({})
+    res.render('flights/index', {
+      title: 'All Flights',
+      flights
+    })
+  } catch (error) {
+    console.log(error)
+    res.redirect('/flights')
+  }
+}
+
 export {
   newFlight as new,
   create,
+  index,
 }
