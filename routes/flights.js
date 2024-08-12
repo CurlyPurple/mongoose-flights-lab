@@ -12,14 +12,17 @@ router.get('/new', flightsCtrl.new)
 // GET /:flightId
 router.get('/:flightId', flightsCtrl.show)
 
+// GET /flights/:flightId/edit
+router.get('/:flightId/edit', flightsCtrl.edit)
+
 // POST /flights
 router.post('/', flightsCtrl.create)
 
+// POST /:flightId/tickets
+router.post('/:flightId/tickets', flightsCtrl.createTickets)
+
 // DELETE /flights/:flightId
 router.delete('/:flightId', flightsCtrl.delete)
-
-// GET /flights/:flightId/edit
-router.get('/:flightId/edit', flightsCtrl.edit)
 
 // PUT /flights/:flightId
 router.put('/:flightId', flightsCtrl.update)
